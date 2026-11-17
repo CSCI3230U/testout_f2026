@@ -1,0 +1,19 @@
+import { lazy, Suspense } from "react";
+import { Routes, Route } from "react-router-dom";
+
+import RecipeList from "./RecipeList.jsx";
+import NotFound from "./NotFound.jsx";
+
+const RecipeDetail = lazy(() => import("./RecipeDetail.jsx"));
+
+export default function App() {
+  return (
+    <Suspense fallback={<p>Loading…</p>}>
+      <Routes>
+        <Route path="/" element={<RecipeList />} />
+        <Route path="/recipes/:id" element={<RecipeDetail />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Suspense>
+  );
+}
