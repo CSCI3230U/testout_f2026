@@ -48,7 +48,7 @@ export default function RecipeList() {
   return (
     <div className="app">
       <header>
-        <h1>Recipe Browser 1</h1>
+        <h1>Recipe Browser 2</h1>
 
         <FavouritesBadge />
 
